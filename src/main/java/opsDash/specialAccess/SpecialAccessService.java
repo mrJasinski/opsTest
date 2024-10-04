@@ -45,15 +45,14 @@ class SpecialAccessService
 
         if (vehicle.isPickedUp())
         {
-
-            if (vehicle.getPickedUpDate().plusYears(2).isBefore(LocalDate.now()))
+            if (vehicle.getDateDeliveredVehicle().plusYears(2).isBefore(LocalDate.now()))
             {
 //                reject ze względu na przedawnienie
 //                zmiana statys requestu na REJECTED - OVERDUE (np)
                 return "Case overdue 2 years!";
             }
 
-            if ((vehicle.getPickedUpDate().plusDays(90)).isBefore(LocalDate.now()))
+            if ((vehicle.getDateDeliveredVehicle().plusDays(90)).isBefore(LocalDate.now()))
             {
 
             }

@@ -6,5 +6,6 @@ public class Merchant
     private String number;
     private String email;
     private String status;  //enum? active/banned/blocked/inactive?
-    private int daysToPayCar;   // how many days merchant has to pay for car -
+    private int daysToBlock;   // how many days merchant has to pay for car before block account-
+    private int daysToBan;   // how many days merchant has to pay for car before block account-
 }

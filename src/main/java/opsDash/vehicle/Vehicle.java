@@ -13,7 +13,6 @@ public class Vehicle
     private String manufacturer;
     private Country docsResponsibleCountry;
     private LocalDate dateBooked;
-//    obliczanie - rebook powinien stopować odliczanie - ilośc bazowa pochodzi z klienta
     private int daysToBePaid;
     private LocalDate datePaid;
     private boolean isRem;
@@ -75,7 +74,12 @@ public class Vehicle
         return this.dateDeliveredDocs;
     }
 
-    boolean isPickedUp()
+    public LocalDate getDateDeliveredVehicle()
+    {
+        return this.dateDeliveredVehicle;
+    }
+
+    public boolean isPickedUp()
     {
 //        if delivered date is not null it means vehicle is picked up
         return this.dateDeliveredVehicle != null;
