@@ -19,4 +19,11 @@ class ClaimService
 //    i przypisać do agenta z puli zgodnie z zasadą aby każdy dostawał tyle samo
 //    uwzględnia się tylko osoby obecne tego dnia w pracy
 
+
+    void assignClaimToAgent(Claim toAssign)
+    {
+//        by claim country get available agent with skill/task claim with the lowest daily assigned claims number
+
+    }
+
 }

@@ -7,7 +7,15 @@ import java.time.LocalDate;
 class SpecialAccessService
 {
     //    zgłaszanie SA
-    String requestSpecialAccess(Vehicle vehicle)
+    void requestSpecialAccess()
+    {
+
+    }
+
+
+
+
+    void SpecialAccessMethod(Vehicle vehicle)
     {
 //        request fields
 //        number
@@ -49,7 +57,7 @@ class SpecialAccessService
             {
 //                reject ze względu na przedawnienie
 //                zmiana statys requestu na REJECTED - OVERDUE (np)
-                return "Case overdue 2 years!";
+//                return "Case overdue 2 years!";
             }
 
             if ((vehicle.getDateDeliveredVehicle().plusDays(90)).isBefore(LocalDate.now()))

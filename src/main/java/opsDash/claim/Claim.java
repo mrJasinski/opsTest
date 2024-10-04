@@ -2,6 +2,8 @@ package opsDash.claim;
 
 import opsDash.vehicle.Vehicle;
 
+import java.util.Set;
+
 class Claim
 {
     private int id;
@@ -19,5 +21,7 @@ class Claim
 //    cmr placeholder - based on reasons?
 //    car docs - based on reasons
 //    claim reasons
+
+    private Set<ClaimReason> reasons;
 
 }
