@@ -7,7 +7,7 @@ import java.time.LocalDate;
 class SpecialAccessService
 {
     //    zgłaszanie SA
-    void requestSpecialAccess()
+    void requestSpecialAccess(SAWriteModel request)
     {
 
     }
