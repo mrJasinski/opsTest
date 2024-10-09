@@ -1,17 +1,86 @@
 package opsDash.specialAccess;
 
 import opsDash.vehicle.Vehicle;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Service
 class SpecialAccessService
 {
+    private final SpecialAccessRepository saRepo;
+
+    SpecialAccessService(final SpecialAccessRepository saRepo)
+    {
+        this.saRepo = saRepo;
+    }
+
     //    zgłaszanie SA
     void requestSpecialAccess(SAWriteModel request)
     {
+        var reason = request.getReason();
 
+//
+
+        var number = getHighestSARequestNumber();
+        var vehicle = this.vehicleService.getVehicleByStockId(request.getVehicleStockId());
+        var requester = this.employeeService.getEmployeeByEmial(request.getRequesterMail());
+        var status = setStatusByReason(request.getReason());
+
+        this.saRepo.save(new SARequest(
+                number
+                , vehicle
+                , requester
+                , request.getTimestamp()
+                , reason
+                , request.getJustification()
+                , status
+        ));
     }
 
+    int getHighestSARequestNumber()
+    {
+        return this.saRepo.findHighestSARequestNumber()
+                .orElse(10 ^ 5);
+    }
+
+    SAStatus setStatusByReason(SAReason reason)
+    {
+//        GRANTED_W/O_ADD_HUMAN_CHECK
+//        missing or delay docs - check if not delivered // count delay
+//        car delivery delay
+//        late PU date actualization
+//        first claim - np klient nie dokońca był świadomy zasad
+
+//        WAITING_FOR_LOCAL_DEC
+//        mileage manipulation
+//        missing items
+//        NRC
+//        accident vehicle
+//        wrong desc
+//        body damage
+//        hail damage - raczej dotyczy np przypadków gradobicia nad LC
+//        transport damage - dla nieodebranych
+//        errors/admin problems
+//        engine/transmission damage
+//        interior damage
+//        underbody damage
+
+//        WAITING_FOR_HOO
+//        purchase problems
+//        stolen car (zarówno zajęcie jak i faktyczna kradzież?)
+//        registration problems
+
+//        WAITING_FOR_HOS
+//        sales gw - zakładam że to bardzije kwestie mechaniczne które powinny być zgłoszone w 7 dni
+
+
+
+}
+
+
+//    raporty
+//  ilość wg powodu w danym miesiącu
 
 
 

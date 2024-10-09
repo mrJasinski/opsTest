@@ -26,4 +26,13 @@ class ClaimService
 
     }
 
+//    metody procesu od momentu rozpatrzenia przez DM
+    void provideFirstProposal()
+    {
+//        z formularza
+//        firstProposalAmount
+//        firstProposalJustification
+//        reklamacja której to dotyczy z linku?
+    }
+
 }

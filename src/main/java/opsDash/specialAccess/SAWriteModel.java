@@ -5,15 +5,15 @@ import java.time.LocalDateTime;
 class SAWriteModel
 {
 //    otrzymywany z kontrolera
-    private String stockId;
+    private String vehicleStockId;
     private String requesterMail;
     private LocalDateTime timestamp;
     private SAReason reason;
     private String justification;
 
-    String getStockId()
+    String getVehicleStockId()
     {
-        return this.stockId;
+        return this.vehicleStockId;
     }
 
     String getRequesterMail()
