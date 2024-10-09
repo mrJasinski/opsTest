@@ -33,6 +33,58 @@ class ClaimService
 //        firstProposalAmount
 //        firstProposalJustification
 //        reklamacja której to dotyczy z linku?
+
+//        zmiana statusu na WAITING_FOR_FIRST_FEEDBACK
+//        powiadomienie handlowca
     }
+
+    void provideFirstFeedback()
+    {
+//        cztery możliwości
+//        YES - jeśli różne od zera wymaga podania podziąłu vouchera decyzja do wysyłki
+//        NO - wymaga podania uzasadnienia i przekazuje sprawę do CE
+//        CASH - tylko dla wybranych klientów? akceptacja kwoty i przekazuje sprawę do HoS
+//        MORE_PROOFS - dodatkowy tydzień na dosłanie dowodów
+
+//        stosowne zmiany statusow i powiadomienia
+    }
+
+
+//    reklamacja
+//    luźne pomysły
+
+//    automat przypisujący do osoby
+
+//    sloty na cmr kosztorys dokumenty
+//    checki na podstawie wybranych powodów - np reklamacja uszkodzeń nadwozia/brakujących kół etc wymaga cmr
+//    na poziomie pierwszej decyzji DM
+//    wpsiuje się kwotę i uzasadnienie a następnie klik w przycisk "przekaż do sales"
+//    sprawa wyskakuje opiekunowi
+//    ma pola do wpisania swojej odpowiedzi i yes/no/cash (cash jako opcja np dla wybranych klientów itd)
+//    yes - dodatkowe pole na podział vouchera
+//    no - sprawa trafia do CE
+//    WFMP TODO
+//    CE klika yes/no
+//    yes - CE wpisuje swoją opinię sprawa wraca do opiekuna do przekazania klientowi i potwierdzenia pola informed? + podział/cash
+//    no - CE podaje nową kwotę i wpisuje swoją opinię
+//    WFMP TODO
+//    zależnie od rynku przy no sprawa idzie do HoS lub to finalna propozycja -> sales przekazuje i potwierdza informed? + podział/cash
+//    HoS podaje finalną kwotę i ew uzasadnienie
+//    sales  przekazuje i potwierdza informed? + podział/cash
+//    gdy sprawa jest do wysłania wraca do dm który potwierdza kwotę podział cash etc i wysyła
+//    przy samych voucherach reklamacja trafia na status "closed - waiting for activation" i vouchery mają datę wystawienia (wazność 3msc)
+//    na tym statusie można dowolnie manipulować voucherami
+//    gdy klient zaakceptuje voucher reklamacja trafia na status "closed fully processed"  i oficjalnie zamknięta
+
+//    proces cashowy
+//    gdy handlowiec zawnioskuje o cash sprawa trafia do HoS (wniosek o cash zasadniczo oznacza zgodę na zaproponowaną kwotę)
+//    HoS zatwierdza całośc w cash bądź częściowy
+//    sprawa wraca do handlowca który informuje klienta
+//    gdy całość jest w cashu to tylko potwierdza informed?
+//    gdy z voucherem to podaje podział vouchera i potwierdza informed?
+//    sprawa trafia do DM i zostaje wysłana
+//    klient wprowadza dane bankowe co zostaje uznane za akceptację kwoty podziału itd
+//    voucher zostaje wystawiony przy przelewie
+//    sprawa zostaje zamknięta
 
 }
