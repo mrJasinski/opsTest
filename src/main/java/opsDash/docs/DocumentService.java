@@ -6,7 +6,7 @@ import opsDash.vehicle.Vehicle;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-class DocumentService
+public class DocumentService
 {
     //    obliczanie opóźnienie dokumentów
 
@@ -85,7 +85,7 @@ class DocumentService
         return days;
     }
 
-    LocalDate calculateDelayStartDate(LocalDate docsStartDate, Country country, Boolean isRem)
+    public LocalDate calculateDelayStartDate(LocalDate docsStartDate, Country country, Boolean isRem)
     {
 //        for most countries docs should be sent within 1 week from vehicle paid date
 //        for ES it's five weeks amd for IT and NL two - extra deregistration procedures

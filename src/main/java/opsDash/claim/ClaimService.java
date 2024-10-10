@@ -41,12 +41,27 @@ class ClaimService
     void provideFirstFeedback()
     {
 //        cztery możliwości
-//        YES - jeśli różne od zera wymaga podania podziąłu vouchera decyzja do wysyłki
-//        NO - wymaga podania uzasadnienia i przekazuje sprawę do CE
-//        CASH - tylko dla wybranych klientów? akceptacja kwoty i przekazuje sprawę do HoS
-//        MORE_PROOFS - dodatkowy tydzień na dosłanie dowodów
+//        YES - jeśli różne od zera wymaga podania podziąłu vouchera decyzja do wysyłki - TO_BE_SENT
+//        NO - wymaga podania uzasadnienia i przekazuje sprawę do CE - WAITING_FOR_CE
+//        CASH - tylko dla wybranych klientów? akceptacja kwoty i przekazuje sprawę do HoS - CASH_REQUEST
+//        MORE_PROOFS - dodatkowy tydzień na dosłanie dowodów - WFAP
 
 //        stosowne zmiany statusow i powiadomienia
+    }
+
+    void provideCarExpertFeedback()
+    {
+//        YES - zgoda z pierwszą propozycją sprawa trafia do handlowca aby poinformował klienta - INFORM_MERCHANT
+//        NO - podniesienie np ze względów biznesowych wpisanie kwoty w stosowne pole i sprawa do decyzji HoS - WAITING_FOR_HOS
+//        WFMP - dodatkowy tyczień na uzupełnienie dowodów - WFAP
+
+    }
+
+    void provideHOSDecision()
+    {
+//        kwota
+//        ew uzasadnienie
+//        info do handlowca - INFORM_MERCHANT
     }
 
 
